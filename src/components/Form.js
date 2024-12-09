@@ -1,4 +1,6 @@
-import FormInput from "@/components/FormInput";
+import Form1Input from "./Form1Input";
+import Form2Input from "./Form2Input";
+import Image from "./Image";
 import { useState } from "react";
 
 export default function Form() {
@@ -15,18 +17,18 @@ export default function Form() {
         <h1 className="text-2xl font-bold py-2">New food</h1>
         <div className="flex flex-row gap-8 items-center">
           <label className="text-base font-medium">Name</label>
-          <FormInput setText={setText}/>
+          <Form1Input setText={setText}/>
           
         </div>
 
         <div className="flex flex-row gap-7 items-start">
         <label className="text-base font-medium">Recipe</label>
-          <textarea className="border-2 border-gray-300 rounded-lg w-96 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="text" />
+          <Form2Input setText={setText}/>
         </div>
 
         <div className="flex flex-row gap-8 items-center">
           <label className="text-base font-medium">Image</label>
-          <input className="border-2 border-gray-300 rounded-lg w-96 h-8 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="text" />
+          <Image setText={setText}/>
         </div>
 
         <button

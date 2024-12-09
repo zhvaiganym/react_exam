@@ -1,4 +1,4 @@
-export default function FormInput({ setText }) {
+export default function Form1Input({ setText }) {
     return (
         <input 
         type="text"
