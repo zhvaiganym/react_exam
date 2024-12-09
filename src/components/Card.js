@@ -1,23 +1,31 @@
-import FormInput from "@/components/Form1Input";
-import { useState } from "react";
-
-export default function Card() {
-    
-    return (
-    <div className="relative flex items-start p-4">
-   <div className="relative w-[200px] h-[300px] bg-gray-100 rounded-lg shadow-md flex flex-col overflow-hidden">
-    <img 
-      className="w-full h-[170px] object-cover" 
-      src="https://i1.pickpik.com/photos/306/534/563/cloud-sunset-sunrise-mountain-preview.jpg" 
-    />
-
-    <div className="px-4 py-2 bg-white flex-1">
-      <div className="font-semibold text-lg text-gray-900">The Coldest Sunset</div>
-      <p class="text-gray-700 text-base pt-1">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit...
-    </p>
+export default function Card({ card, deleteCard, onClick, isExpanded }) {
+  return (
+    <div
+      className={`relative ${
+        isExpanded ? "w-full h-auto" : "w-[200px] h-[300px]"
+      } bg-gray-100 rounded-lg shadow-md flex flex-col overflow-hidden cursor-pointer`}
+      onClick={!isExpanded ? onClick : null} 
+    >
+      <button
+        onClick={(e) => {
+          e.stopPropagation(); 
+          deleteCard(card);
+        }}
+        className="absolute top-2 right-2 text-xl text-gray-700 hover:text-gray-500"
+      >
+        &times;
+      </button>
+      <img
+        src={card.image}
+        alt="Card"
+        className={`w-full ${isExpanded ? "h-auto" : "h-[220px]"} object-cover`}
+      />
+      <div className="p-4 bg-white">
+        <h2 className="text-lg font-semibold">{card.title}</h2>
+        <p className="text-gray-700">
+          {isExpanded ? card.recipe : `${card.recipe.substring(0, 50)}...`}
+        </p>
+      </div>
     </div>
-  </div>
-</div>
-    )
+  );
 }

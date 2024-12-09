@@ -4,7 +4,6 @@ export default function Home() {
     return (
       <>
         <Form />
-        <h1>About page</h1>
       </>
     );
   }
