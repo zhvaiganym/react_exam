@@ -22,7 +22,7 @@ export default function Form() {
     <>
     <div className="bg-gray-200 flex justify-center items-center h-screen">
       <div className="w-[500px] h-[350px] bg-white shadow-lg rounded-lg flex flex-col gap-5 px-12 pt-5">
-        <h1 className="text-2xl font-bold py-2">New food</h1>
+        <h1 className="text-2xl font-semibold py-2 text-center">New Food</h1>
         <div className="flex flex-row gap-8 items-center">
           <label className="text-base font-medium">Name</label>
           <Form1Input setTitle={setTitle}/>
